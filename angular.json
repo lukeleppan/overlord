@@ -2,6 +2,10 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
+  "cli": {
+    "analytics": false,
+    "packageManager": "npm"
+  },
   "projects": {
     "overlord": {
       "projectType": "application",
@@ -20,18 +24,11 @@
             "outputPath": "dist/overlord",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": [],
             "server": "src/main.server.ts",
             "prerender": true,
@@ -64,6 +61,10 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+          "options": {
+            "host": "0.0.0.0",
+            "port": 4200
+          },
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
@@ -84,19 +85,11 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         }
