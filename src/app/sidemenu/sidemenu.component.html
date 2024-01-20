@@ -1,0 +1,19 @@
+<aside class="sidemenu">
+  <div class="header">
+    <fa-icon [icon]="faSpaghettiMonsterFlying" class="header-icon"></fa-icon>
+    <h1 class="header-text">Overlord</h1>
+  </div>
+  <ul class="sidemenu-list">
+    <li
+      *ngFor="let route of routes"
+      class="list-item"
+      [class.active]="isActive(route.path)"
+      [routerLink]="route.path"
+    >
+      <fa-icon [icon]="route.icon" class="list-item-icon"></fa-icon>
+      <span class="list-item-link">
+        {{ route.title }}
+      </span>
+    </li>
+  </ul>
+</aside>
