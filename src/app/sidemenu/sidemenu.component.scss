@@ -8,19 +8,18 @@ $accent-color: #bb86fc;
   left: 0;
   background-color: #202020;
   overflow-x: hidden;
-  padding-top: 20px;
+  // padding-top: 20px;
 
   .header {
-    padding: 10px;
-    margin: 5px;
-    font-size: 32px;
+    margin: 25px;
+    font-size: 28px;
     display: flex;
     flex-direction: row;
     align-items: center;
 
     &-icon {
       margin-right: 10px;
-      font-size: 38px;
+      font-size: 34px;
       color: $accent-color;
     }
 
