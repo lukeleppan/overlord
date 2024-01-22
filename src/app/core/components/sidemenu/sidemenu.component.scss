@@ -1,4 +1,4 @@
-$accent-color: #bb86fc;
+@import "variables";
 
 .sidemenu {
   height: 100%;
@@ -6,7 +6,7 @@ $accent-color: #bb86fc;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #202020;
+  background-color: $overlay-color-01dp;
   overflow-x: hidden;
   padding-top: 20px;
 
@@ -44,9 +44,10 @@ $accent-color: #bb86fc;
       font-size: 16px;
       color: #e2e2e2;
       display: block;
+      transition: background-color 0.3s ease;
 
       &:hover {
-        background-color: #333;
+        background-color: $overlay-color-02dp;
         color: white;
         cursor: pointer;
       }
@@ -58,10 +59,6 @@ $accent-color: #bb86fc;
       > .list-item-link {
         color: #e2e2e2;
         text-decoration: none;
-
-        &:hover {
-          color: white;
-        }
       }
 
       &.active {

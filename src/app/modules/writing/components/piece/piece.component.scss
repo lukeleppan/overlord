@@ -1,0 +1,38 @@
+@import "variables";
+
+h2 {
+  margin-top: 10px;
+}
+
+.title-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 2px;
+
+  > h2 {
+    margin: 0;
+  }
+
+  > .draft-status {
+    background-color: $accent-color;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+  }
+}
+
+.last-updated {
+  font-size: 12px;
+  color: #c0c0c0;
+}
+
+.description {
+  font-size: 14px;
+  color: #ffffff;
+  margin: 10px 0px 0px 0px;
+}

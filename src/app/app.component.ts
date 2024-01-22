@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SidemenuComponent } from './sidemenu/sidemenu.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SidemenuComponent } from './core/components/sidemenu/sidemenu.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SidemenuComponent],
+  imports: [RouterOutlet, HttpClientModule, SidemenuComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

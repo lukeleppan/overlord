@@ -1,0 +1,13 @@
+<section class="section-main">
+  <div class="header">
+    <h1 class="header-title">Writing</h1>
+    <div class="header-actions">
+      <app-button [onClick]="onNew" [buttonIcon]="faPlus">New</app-button>
+    </div>
+  </div>
+  <ul class="writing-list">
+    <li *ngFor="let piece of writing" class="writing">
+      <app-piece [piece]="piece"></app-piece>
+    </li>
+  </ul>
+</section>

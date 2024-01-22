@@ -1,17 +1,9 @@
 @import "@fortawesome/fontawesome-svg-core/styles.css";
-
-@font-face {
-  font-family: "Bungee Spice";
-  src: url(/assets/fonts/BungeeSpice-Regular.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: "Metal Mania";
-  src: url(/assets/fonts/MetalMania-Regular.ttf) format("truetype");
-}
+@import "fonts";
+@import "variables";
 
 body {
-  background-color: #242424;
+  background-color: #121212;
   color: white;
   font-family: "Roboto", sans-serif;
 }

@@ -1,0 +1,10 @@
+<div [routerLink]="'/writing/edit/' + piece.identifier">
+  <div class="title-box">
+    <h2>{{ piece.title }}</h2>
+    <span class="draft-status" *ngIf="!piece.published"> DRAFT </span>
+  </div>
+  <span class="last-updated">
+    Edited: {{ piece.updatedAt.format("Do MMM YYYY") }}
+  </span>
+  <p class="description">{{ piece.description }}</p>
+</div>
