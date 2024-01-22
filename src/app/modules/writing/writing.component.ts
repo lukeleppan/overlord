@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 import moment from 'moment';
 import { SharedModule } from '../../shared/shared.module';
 import { PieceComponent } from './components/piece/piece.component';
+import { ToastService } from '../../core/services/toast.service';
 
 @Component({
   selector: 'app-writing',
@@ -24,8 +25,16 @@ export class WritingComponent implements OnInit {
   faTrash = faTrash;
   writing: Writing[];
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, public toastService: ToastService) {
     this.writing = [];
+    console.log(toastService);
+    toastService.showToast('Hello', 'success');
+    toastService.showToast('Hello', 'success');
+    toastService.showToast('Hello', 'success');
+    toastService.showToast('Hello', 'success');
+    toastService.showToast('Hello', 'success');
+    toastService.showToast('Hello', 'success');
+    console.log(toastService);
   }
 
   ngOnInit(): void {
@@ -53,6 +62,7 @@ export class WritingComponent implements OnInit {
 
   onNew() {
     console.log('New');
+    console.log(this.toastService);
   }
 
   onEdit(piece: Writing) {
