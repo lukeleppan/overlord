@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ButtonComponent } from './components/button/button.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { CodemirrorComponent } from './components/codemirror/codemirror.component';
 
 @NgModule({
-  declarations: [],
-  imports: [CommonModule, RouterLink, ButtonComponent],
-  exports: [RouterLink, ButtonComponent],
+  imports: [RouterLink, ButtonComponent, SpinnerComponent, CodemirrorComponent],
+  exports: [RouterLink, ButtonComponent, SpinnerComponent, CodemirrorComponent],
 })
 export class SharedModule {}

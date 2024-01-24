@@ -1,0 +1,12 @@
+<div [routerLink]="'/articles/edit/' + article.identifier">
+  <div class="title-box">
+    <h2>{{ article.title }}</h2>
+    @if (!article.published) {
+    <span class="draft-status"> DRAFT </span>
+    }
+  </div>
+  <span class="last-updated">
+    Edited: {{ article.updatedAt.format("Do MMM YYYY") }}
+  </span>
+  <p class="description">{{ article.description }}</p>
+</div>

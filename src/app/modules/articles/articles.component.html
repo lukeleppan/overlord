@@ -1,0 +1,20 @@
+<section class="section-main">
+  <div class="header">
+    <h1 class="header-title">Articles</h1>
+    <div class="header-actions">
+      <app-button [routerLink]="'new/'" [buttonIcon]="faPlus"> New </app-button>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  <ul class="writing-list">
+    @defer (when articles.length === 0) {
+    <li *ngFor="let article of articles" class="writing">
+      <app-article [article]="article"></app-article>
+    </li>
+    } @loading (minimum 1s) {
+    <app-spinner></app-spinner>
+    } @placeholder {
+    <span>There are no articles.</span>
+    }
+  </ul>
+</section>

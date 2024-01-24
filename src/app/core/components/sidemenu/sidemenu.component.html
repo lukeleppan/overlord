@@ -7,8 +7,8 @@
     <li
       *ngFor="let route of routes"
       class="list-item"
-      [class.active]="isActive(route.path)"
       [routerLink]="route.path"
+      routerLinkActive="active"
     >
       <fa-icon [icon]="route.icon" class="list-item-icon"></fa-icon>
       <span class="list-item-link">

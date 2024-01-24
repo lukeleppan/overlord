@@ -1,0 +1,21 @@
+<section>
+  <div class="header">
+    <h1>Edit Article</h1>
+  </div>
+
+  <form [formGroup]="editorForm">
+    <label for="title">Title</label>
+    <input type="text" id="title" formControlName="title" />
+    <label for="description">Description</label>
+    <textarea
+      name="description"
+      id="description"
+      cols="30"
+      rows="10"
+      formControlName="description"
+    ></textarea>
+
+    <label for="content">Article Body</label>
+    <app-codemirror name="content" [editorForm]="editorForm"></app-codemirror>
+  </form>
+</section>

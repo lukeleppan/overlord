@@ -1,11 +1,7 @@
 <div class="toast-container">
-  <div
-    *ngFor="let toast of toastService.toasts"
-    class="toast"
-    [class]="toast.type"
-  >
-    <p>{{ toast.message }}</p>
-    <button class="toast-close" (click)="toastService.removeToast(toast.id)">
+  <div *ngFor="let t of toast.toasts" class="toast" [class]="t.type">
+    <p>{{ t.message }}</p>
+    <button class="toast-close" (click)="toast.removeToast(t.id)">
       <fa-icon [icon]="faTimes"></fa-icon>
     </button>
   </div>

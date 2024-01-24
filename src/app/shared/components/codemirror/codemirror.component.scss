@@ -1,0 +1,54 @@
+@import "variables";
+
+.editor-container {
+  height: 300px;
+  border-radius: 8px;
+  overflow-y: scroll;
+  background-color: $overlay-color-01dp;
+  box-shadow: 0 2px 4px rgb(0, 0, 0, 0.1);
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $overlay-color-01dp;
+    border-radius: 0 8px 8px 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $accent-color;
+    border-radius: 20px;
+    border: 3px solid $overlay-color-02dp;
+
+    &:hover {
+      background-color: $accent-color-lighter;
+      cursor: -webkit-grab;
+    }
+  }
+
+  .cm-editor {
+    height: 100%;
+    width: 100%;
+    background-color: $overlay-color-02dp !important;
+  }
+}
+
+.cm-wrap {
+  height: 100%;
+}
+
+.cm-gutter.cm-lineNumbers {
+  background-color: $overlay-color-02dp !important;
+}
+
+.cm-scroller {
+  overflow: auto !important;
+}
+
+.cm-s-default {
+  font-family: monospace;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}

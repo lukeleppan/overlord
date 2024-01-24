@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ToastService } from '../../services/toast.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -12,11 +12,12 @@ import { NgFor } from '@angular/common';
   styleUrl: './toast.component.scss',
 })
 export class ToastComponent implements OnInit {
+  toast = inject(ToastService);
   faTimes = faTimes;
 
-  constructor(public toastService: ToastService) {}
+  constructor() {}
 
   ngOnInit(): void {
-    console.log(this.toastService);
+    console.log(this.toast);
   }
 }

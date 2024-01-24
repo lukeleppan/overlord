@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { SidemenuComponent } from './core/components/sidemenu/sidemenu.component';
 import { ToastComponent } from './core/components/toast/toast.component';
+import { ToastService } from './core/services/toast.service';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,11 @@ import { ToastComponent } from './core/components/toast/toast.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  toast = inject(ToastService);
   title = 'overlord';
+
+  ngOnInit(): void {
+    this.toast.showToast('Welcome to Overlord', 'info');
+  }
 }
