@@ -4,9 +4,24 @@ section {
   max-width: 600px;
   margin: auto;
 
-  h1 {
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
     color: white;
     margin: 40px 0px 20px 20px;
+
+    h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    fa-icon {
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
   }
 
   form {
@@ -65,5 +80,11 @@ section {
     textarea {
       resize: none;
     }
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
   }
 }

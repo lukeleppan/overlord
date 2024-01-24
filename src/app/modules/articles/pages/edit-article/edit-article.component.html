@@ -1,5 +1,10 @@
 <section>
   <div class="header">
+    <div class="back">
+      <a routerLink="/articles">
+        <fa-icon [icon]="faArrowLeft"></fa-icon>
+      </a>
+    </div>
     <h1>Edit Article</h1>
   </div>
 
@@ -17,5 +22,16 @@
 
     <label for="content">Article Body</label>
     <app-codemirror name="content" [editorForm]="editorForm"></app-codemirror>
+    <div class="actions">
+      <app-button [buttonColor]="'green'" [onClick]="updateArticle">
+        Save
+      </app-button>
+      <app-button [buttonColor]="'accent'" [onClick]="publishArticle">
+        Publish
+      </app-button>
+      <app-button [buttonColor]="'red'" [onClick]="deleteArticle">
+        Delete
+      </app-button>
+    </div>
   </form>
 </section>

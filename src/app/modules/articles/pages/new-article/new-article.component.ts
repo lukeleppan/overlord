@@ -1,5 +1,5 @@
 import { Component, Input, inject, input } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../../../../shared/shared.module';
 import {
   ArticleRequest,
@@ -27,21 +27,23 @@ import { Router } from '@angular/router';
   ],
 })
 export class NewArticleComponent {
-  @Input() fetchArticles: () => void = () => {};
   toast = inject(ToastService);
   router = inject(Router);
   writingService = inject(ArticlesService);
 
-  title = new FormControl('');
-  description = new FormControl('');
+  newForm = new FormGroup({
+    title: new FormControl(''),
+    description: new FormControl(''),
+  });
 
   constructor() {
     this.createArticle = this.createArticle.bind(this);
   }
 
   createArticle() {
-    let title: string = this.title.value as string;
-    let description: string = this.description.value as string;
+    let title: string = this.newForm.get('title')?.value as string;
+    let description: string = this.newForm.get('description')?.value as string;
+    console.log(title, description);
     this.writingService
       .createArticle({
         identifier: identifierFromTitle(title),
@@ -49,12 +51,19 @@ export class NewArticleComponent {
         description: description,
         content: `# ${title}`,
       })
-      .subscribe((res) => {
-        if (res.status == 201) {
-          this.toast.showToast('Article successfully created', 'success');
-          this.fetchArticles();
-          this.router.navigateByUrl('/articles');
-        }
+      .subscribe({
+        next: (res) => {
+          console.log(res);
+          const message = res.body?.message as string;
+          if (res.status == 201) {
+            this.toast.showToast(message, 'success');
+            this.router.navigateByUrl('/articles');
+          }
+        },
+        error: (err) => {
+          console.log(err);
+          this.toast.showToast(err.error.message, 'error', 10000);
+        },
       });
   }
 }

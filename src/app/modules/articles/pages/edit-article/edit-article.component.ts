@@ -7,15 +7,19 @@ import {
 import { Observable, Subscription } from 'rxjs';
 import { Article } from '../../../../core/models/writing.model';
 import { SharedModule } from '../../../../shared/shared.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-edit-article',
   standalone: true,
-  imports: [SharedModule, ReactiveFormsModule],
+  imports: [SharedModule, ReactiveFormsModule, FontAwesomeModule],
   templateUrl: './edit-article.component.html',
   styleUrl: './edit-article.component.scss',
 })
 export class EditArticleComponent implements OnInit {
+  faArrowLeft = faArrowLeft;
+
   private articlesService = inject(ArticlesService);
   private article: Article = {} as Article;
 
@@ -44,4 +48,16 @@ export class EditArticleComponent implements OnInit {
         });
       });
   }
+
+  updateArticle = () => {
+    console.log(this.editorForm.value);
+  };
+
+  publishArticle = () => {
+    console.log(this.editorForm.value);
+  };
+
+  deleteArticle = () => {
+    console.log(this.editorForm.value);
+  };
 }

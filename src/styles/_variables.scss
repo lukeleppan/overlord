@@ -1,5 +1,11 @@
 $accent-color: #bb86fc;
-$accent-color-lighter: #c495fd;
+$accent-color-lighter: lighten($accent-color, 10%);
+
+$green-color: #6cf881;
+$green-color-lighter: lighten($green-color, 10%);
+
+$red-color: #f45b5b;
+$red-color-lighter: lighten($red-color, 10%);
 
 // Overlays
 $overlay-color-00dp: rgba(255, 255, 255, 0);

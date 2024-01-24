@@ -1,4 +1,4 @@
-<button (click)="onClick()">
+<button [className]="buttonColor" (click)="onClick()">
   <fa-icon *ngIf="buttonIcon" [icon]="buttonIcon"></fa-icon>
   <span><ng-content></ng-content></span>
 </button>

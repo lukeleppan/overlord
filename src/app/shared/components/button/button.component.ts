@@ -11,6 +11,7 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
   styleUrl: './button.component.scss',
 })
 export class ButtonComponent {
+  @Input() buttonColor: 'accent' | 'green' | 'red' = 'accent';
   @Input() buttonIcon: IconProp | undefined;
   @Input() onClick: () => void = () => {};
 }
